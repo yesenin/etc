@@ -1,0 +1,19 @@
+svg {
+    background-color: white;
+    width: 520px;
+    height: 520px;
+}
+
+.simplePath {
+    stroke-width: 1px;
+    stroke: saddlebrown;
+    fill: none;
+}
+
+.debugPath {
+    fill: none;
+}
+
+.debugPath:hover {
+    fill: rebeccapurple;
+}
