@@ -944,7 +944,7 @@ const need: StickerSet[] = [
   { code: "SEN", order: 34, have: { 3: 1, 8: 1, 20: 1 } },
   { code: "IRQ", order: 35, have: {} },
   { code: "NOR", order: 36, have: {} },
-  { code: "ARG", order: 37, have: {} },
+  { code: "ARG", order: 37, have: { 16: 1 } },
   { code: "ALG", order: 38, have: {} },
   { code: "AUT", order: 39, have: {} },
   { code: "JOR", order: 40, have: { 3: 1 } },
@@ -962,7 +962,7 @@ export default function Panini(): React.ReactElement {
   return (
     <div className="flex flex-col gap-4 bg-white p-4 text-black">
       <div>
-        <span className="text-2xl font-serif">25.07.2016</span>
+        <span className="text-2xl font-serif">26.07.2026</span>
       </div>
       <div className="flex flex-row gap-4">
         <table className="table-auto border-collapse border border-gray-300 font-mono text-sm">
