@@ -38,6 +38,23 @@ export default function Panini(): React.ReactElement {
                 </td>
               </tr>
             ))}
+            <tr>
+              <td></td>
+              <td className="border border-gray-300 text-violet-500 font-bold text-right">
+                Total
+              </td>
+              <td className="border border-gray-300">
+                {swap.reduce(
+                  (total, sticker) =>
+                    total +
+                    Object.values(sticker.have).reduce(
+                      (stickerTotal, count) => (stickerTotal ?? 0) + (count ?? 0),
+                      0,
+                    ),
+                  0,
+                )}
+              </td>
+            </tr>
           </tbody>
         </table>
         <table className="table-auto border-collapse border border-gray-300 font-mono text-sm">
@@ -66,6 +83,23 @@ export default function Panini(): React.ReactElement {
                 </td>
               </tr>
             ))}
+            <tr>
+              <td></td>
+              <td className="border border-gray-300 text-violet-500 font-bold text-right">
+                Total
+              </td>
+              <td className="border border-gray-300">
+                {need.reduce(
+                  (total, sticker) =>
+                    total +
+                    Object.values(sticker.have).reduce(
+                      (stickerTotal, count) => (stickerTotal ?? 0) + (count ?? 0),
+                      0,
+                    ),
+                  0,
+                )}
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
