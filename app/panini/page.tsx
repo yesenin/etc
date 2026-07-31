@@ -6,7 +6,7 @@ export default function Panini(): React.ReactElement {
   return (
     <div className="flex flex-col gap-4 bg-white p-4 text-black">
       <div>
-        <span className="text-2xl font-serif">28.07.2026 00:25 AM</span>
+        <span className="text-2xl font-serif">01.08.2026 00:55 AM</span>
       </div>
       <div className="flex flex-row gap-4">
        <table className="table-auto border-collapse border border-gray-300 font-mono text-sm">
