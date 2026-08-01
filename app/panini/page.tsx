@@ -111,6 +111,9 @@ export default function Panini(): React.ReactElement {
             </tr>
           </tbody>
         </table>
+        <div>
+          Most wanted: FWC 16, CAN 1, ARG 16, BEL 2, BIH 2
+        </div>
       </div>
     </div>
   );
