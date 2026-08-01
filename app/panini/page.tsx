@@ -1,8 +1,17 @@
 import { need, swap, test } from "./data";
-import { StickerSet } from "./types";
+import { StickerSet, StickerSetCounted } from "./types";
 
 
 export default function Panini(): React.ReactElement {
+
+  const needCounted: StickerSetCounted[] = need.map((sticker) => ({
+    ...sticker,
+    count: Object.values(sticker.have).reduce(
+      (total, count) => (total ?? 0) + (count ?? 0),
+      0,
+    ),
+  }));
+
   return (
     <div className="flex flex-col gap-4 bg-white p-4 text-black">
       <div>
@@ -59,10 +68,10 @@ export default function Panini(): React.ReactElement {
         </table>
         <table className="table-auto border-collapse border border-gray-300 font-mono text-sm">
           <tbody>
-            {need.map((sticker: StickerSet) => (
+            {needCounted.map((sticker: StickerSetCounted) => (
               <tr key={sticker.code}>
                 <td className="border border-gray-300 text-red-500 font-bold">
-                  {sticker.code}
+                  {sticker.count > 0 ? sticker.code : <s className="text-gray-400">{sticker.code}</s>}
                 </td>
                 <td className="border border-gray-300">
                   {Array.from(

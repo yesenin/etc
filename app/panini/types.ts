@@ -4,3 +4,10 @@ export interface StickerSet {
   order?: number;
   group?: string;
 }
+
+export interface StickerSetCounted {
+  code: string;
+  have: { [key: number]: number };
+  order?: number;
+  count: number;
+}
