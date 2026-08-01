@@ -112,7 +112,7 @@ export default function Panini(): React.ReactElement {
           </tbody>
         </table>
         <div>
-          Most wanted: FWC 16, CAN 1, ARG 16, BEL 2, BIH 2
+          Most wanted: FWC 16, CAN 1, ARG 16, BEL 3, BIH 2
         </div>
       </div>
     </div>
