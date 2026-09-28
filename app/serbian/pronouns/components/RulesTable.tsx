@@ -1,8 +1,14 @@
-import { decline, Form, objects, ownerRow, owners } from "../pronouns";
+import { decline, Form, objects, Owner, ownerRow, owners } from "../pronouns";
 import { Formulas } from "./Formulas";
 
 // Built from the game data, so the table always matches what the game checks.
-const ruleRows = Object.values(Object.groupBy(owners, ownerRow)).map((group) => group!);
+// Grouped by hand rather than with Object.groupBy, which older iOS Safari lacks.
+const ruleRows = Object.values(
+  owners.reduce<{ [row: string]: Owner[] }>((groups, owner) => {
+    (groups[ownerRow(owner)] ??= []).push(owner);
+    return groups;
+  }, {}),
+);
 const ruleForms = [...new Set(objects.map((object) => object.form))];
 
 export function RulesTable(): React.ReactElement {

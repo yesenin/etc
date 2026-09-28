@@ -141,6 +141,7 @@ export function Game(): React.ReactElement {
   const { phase, question, feedback } = state;
 
   const start = useCallback(() => {
+    setLastScoreDate(null);
     dispatch({ type: "start", question: makeQuestion(0), now: Date.now() });
   }, []);
 
