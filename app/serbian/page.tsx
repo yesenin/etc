@@ -6,6 +6,11 @@ const sections = [
     title: "Prisvojne zamenice",
     description: "Притяжательные местоимения: обучение и игра на время.",
   },
+  {
+    href: "/rechnik",
+    title: "Rečnik",
+    description: "Словарь существительных и местоимений: значение и падежи из Викисловаря.",
+  },
 ];
 
 export default function SerbianPage(): React.ReactElement {

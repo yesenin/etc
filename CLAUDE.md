@@ -16,6 +16,8 @@ Personal grab-bag site built with Next.js 16 (App Router), React 19, Tailwind CS
 
 **Deployment:** Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes to GitHub Pages. `next.config.ts` uses `output: 'export'` (fully static — no server features, API routes, or dynamic rendering) and, in production only, sets `basePath`/`assetPrefix` to `/etc`. Internal links and asset paths must work under that base path.
 
+**Serbian dictionary (`app/rechnik/`):** Looks up Serbian nouns and pronouns. Because the site is static, `wiktionary.ts` calls the MediaWiki `action=parse` API from the browser (`origin=*`) and parses the rendered HTML with `DOMParser`: meanings come from the "Значења" block of the Serbian noun/pronoun section on sr.wiktionary.org, declension tables from the Serbo-Croatian noun/pronoun sections on en.wiktionary.org.
+
 **Panini sticker tracker (`app/panini/`):** The main feature — tracks a Panini World Cup sticker album.
 - `data.ts` is hand-edited data, not generated: `swap` (duplicates available to trade, `have` maps sticker number → duplicate count) and `need` (missing stickers per team). Each `StickerSet` is a team code with an `order` and `group`; sticker numbers run 1–20.
 - `page.tsx` renders the swap and need tables with totals; teams with nothing left in `need` are shown struck-through in grey. The "last updated" timestamp and the "Most wanted" list are hardcoded strings in this file and are updated by hand alongside `data.ts`.
