@@ -21,8 +21,8 @@ export interface Rates {
 }
 
 const STORAGE_KEY = "xccy-rates";
-// The providers publish once a day, so there is no point asking more often.
-const REFRESH_AFTER = 60 * 60 * 1000;
+// The providers publish once a day, so we only refresh roughly once per day.
+const REFRESH_AFTER = 24 * 60 * 60 * 1000;
 
 function toRates(table: Record<string, unknown> | undefined, updated: unknown, fetched: unknown): Rates {
   if (typeof updated !== "number" || typeof fetched !== "number") throw new Error("Bad timestamp");
